@@ -49,20 +49,23 @@ class App extends Component {
     });
 
     return (
-      <div className=" Container">
-        <div className="header">Rreact Todo Application</div>
+      <div className="App Container">
+        <div className="header">React ToDo List</div>
         {notes}
         <div className="btn" onClick={this.addNote.bind(this)}>
           +
         </div>
+
         <input
           type="text"
           ref={input => {
             this.textInput = input;
           }}
+          className="textInput"
           value={this.state.noteText}
           onChange={noteText => this.updateNoteText(noteText)}
           onKeyPress={this.handleKeyPress.bind(this)}
+          placeholder="Hello!! Enter your list"
         />
       </div>
     );
